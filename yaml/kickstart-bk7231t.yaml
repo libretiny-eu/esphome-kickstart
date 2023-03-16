@@ -27,7 +27,6 @@ logger:
 ota:
 
 wifi:
-  use_address: 192.168.2.140
   ap:
     ssid: kickstart-bk7231t
 
