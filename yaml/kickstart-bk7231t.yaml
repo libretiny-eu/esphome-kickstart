@@ -15,11 +15,10 @@ libretuya:
   loglevel: debug
     
 external_components:
-  - source:
-      type: local
-      path: G:/esphome-components/components
-    components: [pinscan]
-  
+  source: github://libretuya/esphome-kickstart
+  components: [pinscan]
+  refresh: 10 min
+
 logger:
   baud_rate: 115200
   logs:
