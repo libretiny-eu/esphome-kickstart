@@ -1,0 +1,94 @@
+esphome:
+  name: kickstart-bk7231t
+  project:
+    name: esphome.web
+    version: "1.0"
+
+dashboard_import:
+  package_import_url: github://libretuya/esphome-kickstart/yaml/bk7231t.yaml@main
+  import_full_config: true
+
+libretuya:
+  board: generic-bk7231t-qfn32-tuya
+  framework:
+    version: dev
+  loglevel: debug
+    
+external_components:
+  - source:
+      type: local
+      path: G:/esphome-components/components
+    components: [pinscan]
+  
+logger:
+  baud_rate: 115200
+  logs:
+    select: ERROR
+
+ota:
+
+wifi:
+  use_address: 192.168.2.140
+  ap:
+    ssid: kickstart-bk7231t
+
+captive_portal:
+
+api:
+
+web_server:
+  local: true
+
+pinscan:
+  id: scanner
+
+select:
+  - platform: template
+    id: mode
+    name: Pin Mode
+    options: 
+      - INPUT
+      - INPUT_PULLUP
+      - OUTPUT_HIGH
+      - OUTPUT_LOW
+    optimistic: true
+    on_value:
+      - pinscan.set_mode:
+          id: scanner
+          mode: !lambda "return id(mode).active_index().value();"
+
+  - platform: template
+    id: pin
+    name: Pin
+    options: 
+      - D2 / P6 / PWM0
+      - D3 / P7 / PWM1
+      - D4 / P8 / PWM2
+      - D5 / P9 / PWM3
+      - D6 / P10 / UART1_RX
+      - D7 / P11 / UART1_TX
+      - D8 / P14 / SCK
+      - D9 / P15 / CS
+      - D10 / P16 / MOSI
+      - D11 / P17 / MISO
+      - D12 / P20 / I2C1_SCL / TCK
+      - D13 / P21 / I2C1_SDA / TMS
+      - D14 / P22 / TDI
+      - D15 / P23 / TDO / ADC3
+      - D16 / P24 / PWM4
+      - D17 / P26 / PWM5
+      - D18 / P28
+    optimistic: true
+    on_value:
+      - pinscan.set_pin:
+          id: scanner
+          pin: !lambda "return id(pin).active_index().value() + 2;"
+      - pinscan.set_mode:
+          id: scanner
+          mode: !lambda "return id(mode).active_index().value();"
+
+text_sensor: 
+  - platform: wifi_info
+    ip_address:
+      id: ip_address
+      name: IP Address

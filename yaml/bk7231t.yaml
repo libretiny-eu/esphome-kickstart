@@ -1,0 +1,19 @@
+esphome:
+  name: kickstart-bk7231t
+
+libretuya:
+  board: generic-bk7231t-qfn32-tuya
+  framework:
+    version: dev
+    
+ota:
+
+wifi:
+  ap:
+    ssid: kickstart-bk7231t
+
+captive_portal:
+
+api:
+
+web_server:
