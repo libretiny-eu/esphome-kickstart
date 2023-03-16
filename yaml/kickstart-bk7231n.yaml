@@ -1,15 +1,15 @@
 esphome:
-  name: kickstart-bk7231t
+  name: kickstart-bk7231n
   project:
     name: lt.web
     version: "1.0"
 
 dashboard_import:
-  package_import_url: github://libretuya/esphome-kickstart/yaml/bk7231t.yaml@main
+  package_import_url: github://libretuya/esphome-kickstart/yaml/bk7231n.yaml@main
   import_full_config: true
 
 libretuya:
-  board: generic-bk7231t-qfn32-tuya
+  board: generic-bk7231n-qfn32-tuya
   framework:
     version: dev
   loglevel: debug
@@ -29,7 +29,7 @@ ota:
 wifi:
   use_address: 192.168.2.140
   ap:
-    ssid: kickstart-bk7231t
+    ssid: kickstart-bk7231n
 
 captive_portal:
 
