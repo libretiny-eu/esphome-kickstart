@@ -14,7 +14,7 @@ CONF_PIN_STATE_SENSOR = "pin_state_sensor"
 
 CONFIG_SCHEMA = cv.Schema(
     {
-        cv.Required(): cv.declare_id(PinscanComponent),
+        cv.Required(CONF_ID): cv.declare_id(PinscanComponent),
         cv.Optional(CONF_PIN_STATE_SENSOR): binary_sensor.binary_sensor_schema(),
     }
 ).extend(cv.COMPONENT_SCHEMA)
