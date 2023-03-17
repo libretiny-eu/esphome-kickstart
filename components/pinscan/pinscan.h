@@ -1,6 +1,6 @@
 #pragma once
 
-#include "esphome/components/binary_sensor/binary_sensor.h"
+#include "esphome/components/text_sensor/text_sensor.h"
 #include "esphome/core/component.h"
 #include "esphome/core/hal.h"
 #include "esphome/core/log.h"
@@ -17,7 +17,7 @@ public:
   float get_setup_priority() const override { return setup_priority::HARDWARE; }
   void set_pin(int pin);
   void set_mode(int mode);
-  void set_pin_state_sensor(binary_sensor::BinarySensor *pin_state_sensor) {
+  void set_pin_state_sensor(text_sensor::TextSensor *pin_state_sensor) {
     pin_state_sensor_ = pin_state_sensor;
   }
 
@@ -25,7 +25,7 @@ protected:
   int current_pin_{-1};
   int current_mode_{-1};
   int current_state_{-1};
-  binary_sensor::BinarySensor *pin_state_sensor_{nullptr};
+  text_sensor::TextSensor *pin_state_sensor_{nullptr};
 };
 
 } // namespace pinscan

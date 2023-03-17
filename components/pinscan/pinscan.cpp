@@ -66,7 +66,7 @@ void Pinscan::update() {
       ESP_LOGD(TAG, "Pin changed to %s",
                (this->current_state_) ? "HIGH" : "LOW");
       if (this->pin_state_sensor_ != nullptr) {
-        this->pin_state_sensor_->publish_state(this->current_state_);
+        this->pin_state_sensor_->publish_state( (this->current_state_) ? "HIGH" : "LOW");
       }
     }
   }
