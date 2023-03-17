@@ -1,8 +1,3 @@
-substitutions:
-  name: kickstart-bk7231t
-  wifi_ssid: !secret wifi_ssid
-  wifi_password: !secret wifi_password
-
 esphome:
   name: kickstart-bk7231t
 
@@ -14,11 +9,11 @@ libretuya:
 ota:
 
 wifi:
-  ssid: $wifi_ssid
-  password: $wifi_password
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
   ap:
-    ssid: $name
-    password: $wifi_password
+    ssid: kickstart-bk7231t
+    password: !secret wifi_password
 
 captive_portal:
 
