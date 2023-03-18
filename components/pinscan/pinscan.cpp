@@ -12,7 +12,7 @@ void Pinscan::setup() { ESP_LOGCONFIG(TAG, "Setting up Pinscan..."); }
 void Pinscan::dump_config() { ESP_LOGCONFIG(TAG, "Pinscan:"); }
 
 void Pinscan::set_pin(int pin) {
-  if (this->current_pin_ != pin) {
+  if (this->current_pin_ != pin && this->current_pin_ != -1) {
     pinMode(this->current_pin_, INPUT);
   }
   this->current_pin_ = pin;
@@ -66,7 +66,8 @@ void Pinscan::update() {
       ESP_LOGD(TAG, "Pin changed to %s",
                (this->current_state_) ? "HIGH" : "LOW");
       if (this->pin_state_sensor_ != nullptr) {
-        this->pin_state_sensor_->publish_state( (this->current_state_) ? "HIGH" : "LOW");
+        this->pin_state_sensor_->publish_state((this->current_state_) ? "HIGH"
+                                                                      : "LOW");
       }
     }
   }
