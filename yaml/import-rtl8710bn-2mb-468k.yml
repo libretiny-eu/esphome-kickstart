@@ -5,18 +5,15 @@ libretuya:
   board: generic-rtl8710bn-2mb-468k
   framework:
     version: dev
-    
+
+logger:
+web_server:
+captive_portal:
+mdns:
+api:
 ota:
 
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
   ap:
-    ssid: kickstart-rtl8710bn-2mb-468k
-    password: !secret wifi_password
-
-captive_portal:
-
-api:
-
-web_server:

@@ -1,6 +1,6 @@
 substitutions:
   name: kickstart-bk7231n
-  import_url: github://libretuya/esphome-kickstart/yaml/bk7231n.yaml@main
+  import_url: github://libretuya/esphome-kickstart/yaml/import-bk7231n.yaml@main
   board: generic-bk7231n-qfn32-tuya
 
 packages:

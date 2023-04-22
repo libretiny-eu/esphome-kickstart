@@ -21,7 +21,8 @@ libretuya:
 
 external_components:
   source: github://libretuya/esphome-kickstart
-  components: [pinscan]
+  components:
+    - pinscan
   refresh: 10 min
 
 logger:
@@ -38,6 +39,8 @@ wifi:
     ssid: $name
 
 captive_portal:
+
+mdns:
 
 api:
   reboot_timeout: 0s
@@ -78,6 +81,9 @@ select:
           mode: !lambda "return id(mode).active_index().value();"
 
 text_sensor:
+  - platform: libretuya
+    version:
+      name: LibreTuya Version
   - platform: wifi_info
     ip_address:
       id: ip_address
@@ -91,6 +97,8 @@ text_sensor:
 button:
   - platform: factory_reset
     name: Reset to Factory Settings
+  - platform: restart
+    name: Restart
 
 debug:
   update_interval: 5s
@@ -101,3 +109,5 @@ sensor:
       name: Heap Free
     loop_time:
       name: Loop Time
+  - platform: uptime
+    name: Uptime
