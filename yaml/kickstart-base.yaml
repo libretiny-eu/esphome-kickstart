@@ -6,7 +6,7 @@ substitutions:
 esphome:
   name: $name
   project:
-    name: lt.web
+    name: lt.kickstart
     version: "1.0"
 
 dashboard_import:
