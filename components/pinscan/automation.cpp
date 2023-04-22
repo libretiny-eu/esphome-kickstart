@@ -6,5 +6,5 @@ namespace pinscan {
 
 static const char *const TAG = "pinscan.automation";
 
-} // namespace pinscan
-} // namespace esphome
+}  // namespace pinscan
+}  // namespace esphome

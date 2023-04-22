@@ -1,8 +1,8 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from esphome.components import binary_sensor, text_sensor
-from esphome.const import CONF_ID, CONF_PIN, CONF_MODE
 from esphome import automation
+from esphome.components import text_sensor
+from esphome.const import CONF_ID, CONF_MODE, CONF_PIN
 
 AUTO_LOAD = ["text_sensor"]
 

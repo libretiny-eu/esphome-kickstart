@@ -4,11 +4,11 @@ substitutions:
   board: REPLACEME
 
 esphome:
-    name: $name
-    project:
-      name: lt.web
-      version: "1.0"
-  
+  name: $name
+  project:
+    name: lt.web
+    version: "1.0"
+
 dashboard_import:
   package_import_url: $import_url
   import_full_config: true
@@ -54,7 +54,7 @@ select:
   - platform: template
     id: mode
     name: -> Pin Mode
-    options: 
+    options:
       - INPUT
       - INPUT_PULLUP
       - OUTPUT_HIGH
@@ -77,7 +77,7 @@ select:
           id: scanner
           mode: !lambda "return id(mode).active_index().value();"
 
-text_sensor: 
+text_sensor:
   - platform: wifi_info
     ip_address:
       id: ip_address
@@ -87,7 +87,7 @@ text_sensor:
       name: Device Info
     reset_reason:
       name: Reset Reason
-    
+
 button:
   - platform: factory_reset
     name: Reset to Factory Settings
@@ -101,4 +101,3 @@ sensor:
       name: Heap Free
     loop_time:
       name: Loop Time
-    

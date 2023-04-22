@@ -9,7 +9,7 @@ namespace esphome {
 namespace pinscan {
 
 class Pinscan : public PollingComponent {
-public:
+ public:
   Pinscan() : PollingComponent(50) {}
   void setup() override;
   void dump_config() override;
@@ -17,16 +17,14 @@ public:
   float get_setup_priority() const override { return setup_priority::HARDWARE; }
   void set_pin(int pin);
   void set_mode(int mode);
-  void set_pin_state_sensor(text_sensor::TextSensor *pin_state_sensor) {
-    pin_state_sensor_ = pin_state_sensor;
-  }
+  void set_pin_state_sensor(text_sensor::TextSensor *pin_state_sensor) { pin_state_sensor_ = pin_state_sensor; }
 
-protected:
+ protected:
   int current_pin_{-1};
   int current_mode_{-1};
   int current_state_{-1};
   text_sensor::TextSensor *pin_state_sensor_{nullptr};
 };
 
-} // namespace pinscan
-} // namespace esphome
+}  // namespace pinscan
+}  // namespace esphome
