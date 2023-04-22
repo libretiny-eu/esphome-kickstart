@@ -1,6 +1,6 @@
 substitutions:
   name: kickstart-rtl8710bn-2mb-468k
-  import_url: github://libretuya/esphome-kickstart/yaml/import-rtl8710bn-2mb-468k.yaml@main
+  import_url: github://libretuya/esphome-kickstart/yaml/import-rtl8710bn-2mb-468k.yaml@master
   board: generic-rtl8710bn-2mb-788k
 
 packages:
