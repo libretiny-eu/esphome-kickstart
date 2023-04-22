@@ -23,6 +23,7 @@ external_components:
   source: github://libretuya/esphome-kickstart
   components:
     - pinscan
+    - hub_api
   refresh: 10 min
 
 logger:
@@ -52,6 +53,8 @@ pinscan:
   id: scanner
   pin_state_sensor:
     name: -> Pin State
+
+hub_api:
 
 select:
   - platform: template
