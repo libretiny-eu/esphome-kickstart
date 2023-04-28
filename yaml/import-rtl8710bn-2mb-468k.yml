@@ -1,7 +1,7 @@
 esphome:
   name: kickstart-rtl8710bn-2mb-468k
 
-libretuya:
+libretiny:
   board: generic-rtl8710bn-2mb-468k
   framework:
     version: dev

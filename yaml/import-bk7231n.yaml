@@ -1,7 +1,7 @@
 esphome:
   name: kickstart-bk7231n
 
-libretuya:
+libretiny:
   board: generic-bk7231n-qfn32-tuya
   framework:
     version: dev

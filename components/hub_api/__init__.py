@@ -4,7 +4,7 @@ from esphome.const import CONF_ID
 from esphome.components.web_server_base import CONF_WEB_SERVER_BASE_ID
 from esphome.components import web_server_base
 
-DEPENDENCIES = ["libretuya"]
+DEPENDENCIES = ["libretiny"]
 AUTO_LOAD = ["web_server_base"]
 
 hub_api_ns = cg.esphome_ns.namespace("hub_api")

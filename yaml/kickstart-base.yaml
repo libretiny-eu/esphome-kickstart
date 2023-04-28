@@ -13,14 +13,14 @@ dashboard_import:
   package_import_url: $import_url
   import_full_config: true
 
-libretuya:
+libretiny:
   board: $board
   framework:
     version: dev
   loglevel: debug
 
 external_components:
-  source: github://libretuya/esphome-kickstart
+  source: github://libretiny-eu/esphome-kickstart
   components:
     - pinscan
     - hub_api
@@ -84,9 +84,9 @@ select:
           mode: !lambda "return id(mode).active_index().value();"
 
 text_sensor:
-  - platform: libretuya
+  - platform: libretiny
     version:
-      name: LibreTuya Version
+      name: LibreTiny Version
   - platform: wifi_info
     ip_address:
       id: ip_address

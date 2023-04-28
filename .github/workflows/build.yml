@@ -19,7 +19,7 @@ jobs:
       - name: Checkout ESPHome fork
         uses: actions/checkout@v3
         with:
-          repository: kuba2k2/libretuya-esphome
+          repository: kuba2k2/libretiny-esphome
           path: esphome
           ref: platform/libretuya
       - name: Set up Python
