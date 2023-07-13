@@ -1,10 +1,15 @@
 substitutions:
   name: kickstart-bk7231t
   import_url: github://libretiny-eu/esphome-kickstart/yaml/import-bk7231t.yaml@master
-  board: generic-bk7231t-qfn32-tuya
 
 packages:
   base: !include kickstart-base.yaml
+
+bk72xx:
+  board: generic-bk7231t-qfn32-tuya
+  framework:
+    version: dev
+  loglevel: debug
 
 select:
   - platform: template

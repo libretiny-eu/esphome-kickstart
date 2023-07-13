@@ -1,7 +1,6 @@
 substitutions:
   name: REPLACEME
   import_url: REPLACEME
-  board: REPLACEME
 
 esphome:
   name: $name
@@ -12,12 +11,6 @@ esphome:
 dashboard_import:
   package_import_url: $import_url
   import_full_config: true
-
-libretiny:
-  board: $board
-  framework:
-    version: dev
-  loglevel: debug
 
 external_components:
   source: github://libretiny-eu/esphome-kickstart
