@@ -12,24 +12,24 @@ bk72xx:
 select:
   - platform: template
     id: !extend pin
-    options: 
+    options:
       - Select PIN
-      - D0 / P0 / UART2_TX / I2C2_SCL
-      - D1 / P1 / UART2_RX / I2C2_SDA
-      - D2 / P6 / PWM0
-      - D3 / P7 / PWM1
-      - D4 / P8 / PWM2
-      - D5 / P9 / PWM3
-      - D6 / P10 / UART1_RX
-      - D7 / P11 / UART1_TX
-      - D8 / P14 / SCK
-      - D9 / P15 / CS
-      - D10 / P16 / MOSI
-      - D11 / P17 / MISO
-      - D12 / P20 / I2C1_SCL / TCK
-      - D13 / P21 / I2C1_SDA / TMS
-      - D14 / P22 / TDI
-      - D15 / P23 / TDO / ADC3
-      - D16 / P24 / PWM4
-      - D17 / P26 / PWM5
-      - D18 / P28
+      - P0 / UART2_TX / I2C2_SCL
+      - P1 / UART2_RX / I2C2_SDA
+      - P6 / PWM0
+      - P7 / PWM1
+      - P8 / PWM2
+      - P9 / PWM3
+      - P10 / UART1_RX
+      - P11 / UART1_TX
+      - P14 / SCK
+      - P15 / CS
+      - P16 / MOSI
+      - P17 / MISO
+      - P20 / I2C1_SCL / TCK
+      - P21 / I2C1_SDA / TMS
+      - P22 / TDI
+      - P23 / TDO / ADC3
+      - P24 / PWM4
+      - P26 / PWM5
+      - P28

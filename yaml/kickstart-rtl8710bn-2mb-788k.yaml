@@ -12,22 +12,22 @@ rtl87xx:
 select:
   - platform: template
     id: !extend pin
-    options: 
+    options:
       - Select PIN
-      - D0 / PA00 / PWM2
-      - D1 / PA05 / PWM4
-      - D2 / PA06 / FCS
-      - D3 / PA07 / FD1
-      - D4 / PA08 / FD2
-      - D5 / PA09 / FD0
-      - D6 / PA10 / FSCK
-      - D7 / PA11 / FD3
-      - D8 / PA12 / PWM3
-      - D9 / PA14 / PWM0 / SWCLK
-      - D10 / PA15 / PWM1 / SWDIO
-      - D11 / PA18 / UART0_RX / I2C1_SCL / SPI0_SCK / SPI1_SCK
-      - D12 / PA19 / UART0_CTS / I2C0_SDA / SPI0_CS / SPI1_CS
-      - D13 / PA22 / UART0_RTS / I2C0_SCL / SPI0_MISO / SPI1_MISO / PWM5
-      - D14 / PA23 / UART0_TX / I2C1_SDA / SPI0_MISO / SPI1_MISO / PWM0
-      - D15 / PA29 / UART2_RX / I2C0_SCL / PWM4
-      - D16 / PA30 / UART2_TX / I2C0_SDA / PWM4
+      - PA00 / PWM2
+      - PA05 / PWM4
+      - PA06 / FCS
+      - PA07 / FD1
+      - PA08 / FD2
+      - PA09 / FD0
+      - PA10 / FSCK
+      - PA11 / FD3
+      - PA12 / PWM3
+      - PA14 / PWM0 / SWCLK
+      - PA15 / PWM1 / SWDIO
+      - PA18 / UART0_RX / I2C1_SCL / SPI0_SCK / SPI1_SCK
+      - PA19 / UART0_CTS / I2C0_SDA / SPI0_CS / SPI1_CS
+      - PA22 / UART0_RTS / I2C0_SCL / SPI0_MISO / SPI1_MISO / PWM5
+      - PA23 / UART0_TX / I2C1_SDA / SPI0_MISO / SPI1_MISO / PWM0
+      - PA29 / UART2_RX / I2C0_SCL / PWM4
+      - PA30 / UART2_TX / I2C0_SDA / PWM4
