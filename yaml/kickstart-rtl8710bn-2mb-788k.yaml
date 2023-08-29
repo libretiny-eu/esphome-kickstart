@@ -7,8 +7,6 @@ packages:
 
 rtl87xx:
   board: generic-rtl8710bn-2mb-788k
-  framework:
-    version: dev
   loglevel: debug
 
 select:

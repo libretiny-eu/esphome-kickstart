@@ -3,8 +3,6 @@ esphome:
 
 rtl87xx:
   board: generic-rtl8710bn-2mb-788k
-  framework:
-    version: dev
 
 logger:
 web_server:

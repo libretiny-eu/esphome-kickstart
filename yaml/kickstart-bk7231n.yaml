@@ -7,8 +7,6 @@ packages:
 
 bk72xx:
   board: generic-bk7231n-qfn32-tuya
-  framework:
-    version: dev
   loglevel: debug
 
 select:
