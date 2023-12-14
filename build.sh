@@ -3,7 +3,7 @@
 set -e
 mkdir -p build/
 cd yaml/
-configs=("bk7231t" "bk7231n" "rtl8710bn-2mb-788k" "esp8266" "esp32")
+configs=("bk7231t" "bk7231n" "rtl8710bn" "esp8266" "esp32")
 for config in ${configs[@]}; do
     
     esphome compile kickstart-${config}.yaml
