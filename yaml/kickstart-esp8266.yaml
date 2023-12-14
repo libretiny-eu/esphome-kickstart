@@ -13,16 +13,14 @@ select:
     id: !extend pin
     options:
       - Select PIN
-      - GPIO0
-      - GPIO1
-      - GPIO2
-      - GPIO3
-      - GPIO7
-      - GPIO8
-      - GPIO9
-      - GPIO10
-      - GPIO11
-      - GPIO12
-      - GPIO13
-      - GPIO14
-      - GPIO15
+      - D0
+      - D1
+      - D2
+      - D3
+      - D4
+      - D5
+      - D6
+      - D7
+      - D8
+      - D9
+      - D10

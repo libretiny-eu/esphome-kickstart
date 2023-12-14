@@ -52,18 +52,17 @@ static const int PIN_MAP[] = {
 };
 #elif defined(USE_ESP8266)
 static const int PIN_MAP[] = {
-    FUNC_GPIO0,
-    FUNC_GPIO1,
-    FUNC_GPIO2,
-    FUNC_GPIO3,
-    FUNC_GPIO7,
-    FUNC_GPIO8,
-    FUNC_GPIO9,
-    FUNC_GPIO10,
-    FUNC_GPIO11,
-    FUNC_GPIO12,
-    FUNC_GPIO13,
-    FUNC_GPIO15,
+    D0, // GPIO16
+    D1, // GPIO5
+    D2, // GPIO4
+    D3, // GPIO0
+    D4, // GPIO2
+    D5, // GPIO14
+    D6, // GPIO12
+    D7, // GPIO13
+    D8, // GPIO15
+    D9, // GPIO3
+    D10, // GPIO1
 };
 #elif defined(USE_ESP32)
 static const int PIN_MAP[] = {
@@ -71,12 +70,12 @@ static const int PIN_MAP[] = {
     T2,     // GPIO2
     T0,     // GPIO4
     SS,     // GPIO5
-    FUNC_MTDI_GPIO12,
-    FUNC_MTCK_GPIO13,
-    FUNC_MTMS_GPIO14,
-    FUNC_MTDO_GPIO15,
+    A15,    // GPIO12
+    A14,    // GPIO13
+    A16,    // GPIO14
+    A13,    // GPIO15
     SCK,    // GPIO18
-    FUNC_GPIO19_VSPIQ,
+    MISO,   // GPIO19
     SDA,    // GPIO21
     SCL,    // GPIO22
     MOSI,   // GPIO23
