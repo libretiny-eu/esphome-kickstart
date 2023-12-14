@@ -65,6 +65,30 @@ static const int PIN_MAP[] = {
     FUNC_GPIO13,
     FUNC_GPIO15,
 };
+#elif defined(USE_ESP32)
+static const int PIN_MAP[] = {
+    FUNC_GPIO0,
+    FUNC_GPIO1,
+    FUNC_GPIO2,
+    FUNC_GPIO4,
+    FUNC_GPIO5,
+    FUNC_GPIO12,
+    FUNC_GPIO13,
+    FUNC_GPIO14,
+    FUNC_GPIO15,
+    FUNC_GPIO16,
+    FUNC_GPIO17,
+    FUNC_GPIO18,
+    FUNC_GPIO19,
+    FUNC_GPIO21,
+    FUNC_GPIO22,
+    FUNC_GPIO23,
+    FUNC_GPIO25,
+    FUNC_GPIO26,
+    FUNC_GPIO27,
+    FUNC_GPIO32,
+    FUNC_GPIO33,
+};
 #else
 #error "Unsupported chip type"
 #endif
