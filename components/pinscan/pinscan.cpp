@@ -49,15 +49,16 @@ static const int PIN_MAP[] = {
     PIN_PA29,  // PA29 / UART2_RX / I2C0_SCL / PWM4
     PIN_PA30,  // PA30 / UART2_TX / I2C0_SDA / PWM4
 
-};#elif defined(ESP8266)
+};
+#elif defined(USE_ESP8266)
 static const int PIN_MAP[] = {
-    PIN_GPIO0,
-    PIN_GPIO1,
-    PIN_GPIO2,
-    PIN_GPIO3,
-    PIN_GPIO7,
-    PIN_GPIO8,
-    PIN_GPIO9,
+    PIN_GPIO00,
+    PIN_GPIO01,
+    PIN_GPIO02,
+    PIN_GPIO03,
+    PIN_GPIO07,
+    PIN_GPIO08,
+    PIN_GPIO09,
     PIN_GPIO10,
     PIN_GPIO11,
     PIN_GPIO12,
