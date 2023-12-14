@@ -14,7 +14,6 @@ select:
     options:
       - Select PIN
       - GPIO0,
-      - GPIO1,
       - GPIO2,
       - GPIO4,
       - GPIO5,
@@ -22,8 +21,6 @@ select:
       - GPIO13,
       - GPIO14,
       - GPIO15,
-      - GPIO16,
-      - GPIO17,
       - GPIO18,
       - GPIO19,
       - GPIO21,
