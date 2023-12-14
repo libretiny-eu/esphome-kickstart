@@ -1,6 +1,6 @@
 substitutions:
   name: kickstart-esp8266
-  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-esp8266.yaml@master
+  import_url: github://yeyeto2788/esphome-kickstart/yaml/import-esp8266.yaml@master
 
 packages:
   base: !include kickstart-base-esp.yaml
