@@ -52,19 +52,18 @@ static const int PIN_MAP[] = {
 };
 #elif defined(USE_ESP8266)
 static const int PIN_MAP[] = {
-    PIN_GPIO00,
-    PIN_GPIO01,
-    PIN_GPIO02,
-    PIN_GPIO03,
-    PIN_GPIO07,
-    PIN_GPIO08,
-    PIN_GPIO09,
-    PIN_GPIO10,
-    PIN_GPIO11,
-    PIN_GPIO12,
-    PIN_GPIO13,
-    PIN_GPIO15,
-    PIN_GPIO16,
+    FUNC_GPIO0,
+    FUNC_GPIO1,
+    FUNC_GPIO2,
+    FUNC_GPIO3,
+    FUNC_GPIO7,
+    FUNC_GPIO8,
+    FUNC_GPIO9,
+    FUNC_GPIO10,
+    FUNC_GPIO11,
+    FUNC_GPIO12,
+    FUNC_GPIO13,
+    FUNC_GPIO15,
 };
 #else
 #error "Unsupported chip type"

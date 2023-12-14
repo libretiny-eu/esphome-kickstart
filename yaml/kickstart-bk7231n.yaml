@@ -7,7 +7,6 @@ packages:
 
 bk72xx:
   board: generic-bk7231n-qfn32-tuya
-  loglevel: debug
 
 select:
   - platform: template
