@@ -1,13 +1,15 @@
 substitutions:
-  name: kickstart-rtl8710bn-2mb-788k
-  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-rtl8710bn-2mb-788k.yaml@master
+  name: kickstart-rtl8710bn
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-rtl8710bn.yaml@master
 
 packages:
   base: !include kickstart-base.yaml
 
 rtl87xx:
   board: generic-rtl8710bn-2mb-788k
-  loglevel: debug
+  framework:
+    version: latest
+    loglevel: debug
 
 select:
   - platform: template

@@ -16,12 +16,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Checkout ESPHome fork
+      - name: Checkout ESPHome
         uses: actions/checkout@v3
         with:
-          repository: kuba2k2/libretiny-esphome
+          repository: esphome/esphome
           path: esphome
-          ref: platform/libretuya
+          ref: release
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
