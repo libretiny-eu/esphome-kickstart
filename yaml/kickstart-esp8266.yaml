@@ -14,13 +14,13 @@ select:
     options:
       - Select PIN
       - D0
-      - D1
-      - D2
+      - D1 / SCL
+      - D2 / SDA
       - D3
       - D4
-      - D5
-      - D6
-      - D7
-      - D8
+      - D5 / SCK
+      - D6 / MISO
+      - D7 / MOSI
+      - D8 / SS
       - D9
       - D10

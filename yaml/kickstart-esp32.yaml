@@ -13,21 +13,21 @@ select:
     id: !extend pin
     options:
       - Select PIN
-      - GPIO0,
-      - GPIO2,
-      - GPIO4,
-      - GPIO5,
-      - GPIO12,
-      - GPIO13,
-      - GPIO14,
-      - GPIO15,
-      - GPIO18,
-      - GPIO19,
-      - GPIO21,
-      - GPIO22,
-      - GPIO23,
-      - GPIO25,
-      - GPIO26,
-      - GPIO27,
-      - GPIO32,
-      - GPIO33,
+      - GPIO0
+      - GPIO2
+      - GPIO4
+      - GPIO5 / SS
+      - GPIO12
+      - GPIO13
+      - GPIO14
+      - GPIO15
+      - GPIO18 / SCK
+      - GPIO19 / MISO
+      - GPIO21 / SDA
+      - GPIO22 / SCL
+      - GPIO23 / MOSI
+      - GPIO25 / DAC1
+      - GPIO26 / DAC2
+      - GPIO27
+      - GPIO32
+      - GPIO33
