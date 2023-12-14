@@ -10,3 +10,6 @@ for config in ${configs[@]}; do
 	cp .esphome/build/kickstart-${config}/.pioenvs/kickstart-${config}/*.ota.rbl ../build/ || true
 	cp .esphome/build/kickstart-${config}/.pioenvs/kickstart-${config}/*.ota.ug.bin ../build/ || true
 done
+
+cp .esphome/build/kickstart-bk7231t/.pioenvs/kickstart-bk7231t/*.ota.rbl ../build/OpenBK7231T_OTA_upgrade_to_esphome_$1.rbl || true
+cp .esphome/build/kickstart-bk7231n/.pioenvs/kickstart-bk7231n/*.ota.rbl ../build/OpenBK7231N_OTA_upgrade_to_esphome_$1.rbl || true
