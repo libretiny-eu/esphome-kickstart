@@ -13,14 +13,14 @@ select:
     id: !extend pin
     options:
       - Select PIN
-      - D0
-      - D1 / SCL
-      - D2 / SDA
-      - D3
-      - D4
-      - D5 / SCK
-      - D6 / MISO
-      - D7 / MOSI
-      - D8 / SS
-      - D9
-      - D10
+      - GPIO16
+      - GPIO5 / SCL
+      - GPIO4
+      - GPIO0
+      - GPIO2 / SDA
+      - GPIO14 / SCK
+      - GPIO12 / MISO
+      - GPIO13 / MOSI
+      - GPIO15 / SS
+      - GPIO3
+      - GPIO1

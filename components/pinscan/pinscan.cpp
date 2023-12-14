@@ -53,14 +53,14 @@ static const int PIN_MAP[] = {
 #elif defined(USE_ESP8266)
 static const int PIN_MAP[] = {
     D0, // GPIO16
-    D1, // GPIO5
+    D1, // GPIO5 / SCL
     D2, // GPIO4
     D3, // GPIO0
-    D4, // GPIO2
-    D5, // GPIO14
-    D6, // GPIO12
-    D7, // GPIO13
-    D8, // GPIO15
+    D4, // GPIO2 / SDA
+    D5, // GPIO14 / SCK
+    D6, // GPIO12 / MISO
+    D7, // GPIO13 / MOSI
+    D8, // GPIO15 / SS
     D9, // GPIO3
     D10, // GPIO1
 };
