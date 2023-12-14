@@ -1,0 +1,105 @@
+substitutions:
+  name: REPLACEME
+  import_url: REPLACEME
+
+esphome:
+  name: $name
+  project:
+    name: lt.kickstart
+    version: "1.0"
+
+dashboard_import:
+  package_import_url: $import_url
+  import_full_config: true
+
+external_components:
+  source: github://libretiny-eu/esphome-kickstart
+  components:
+    - pinscan
+    - hub_api
+  refresh: 10 min
+
+logger:
+  baud_rate: 115200
+  logs:
+    select: ERROR
+    sensor: ERROR
+    text_sensor: ERROR
+
+ota:
+
+wifi:
+  ap:
+    ssid: $name
+
+captive_portal:
+
+mdns:
+
+api:
+  reboot_timeout: 0s
+
+web_server:
+  local: true
+
+pinscan:
+  id: scanner
+  pin_state_sensor:
+    name: -> Pin State
+
+
+select:
+  - platform: template
+    id: mode
+    name: -> Pin Mode
+    options:
+      - INPUT
+      - INPUT_PULLUP
+      - OUTPUT_HIGH
+      - OUTPUT_LOW
+    optimistic: true
+    on_value:
+      - pinscan.set_mode:
+          id: scanner
+          mode: !lambda "return id(mode).active_index().value();"
+
+  - platform: template
+    id: pin
+    name: -> Pin
+    optimistic: true
+    on_value:
+      - pinscan.set_pin:
+          id: scanner
+          pin: !lambda "return id(pin).active_index().value() - 1;"
+      - pinscan.set_mode:
+          id: scanner
+          mode: !lambda "return id(mode).active_index().value();"
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      id: ip_address
+      name: IP Address
+  - platform: debug
+    device:
+      name: Device Info
+    reset_reason:
+      name: Reset Reason
+
+button:
+  - platform: factory_reset
+    name: Reset to Factory Settings
+  - platform: restart
+    name: Restart
+
+debug:
+  update_interval: 5s
+
+sensor:
+  - platform: debug
+    free:
+      name: Heap Free
+    loop_time:
+      name: Loop Time
+  - platform: uptime
+    name: Uptime

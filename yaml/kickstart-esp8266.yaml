@@ -1,0 +1,28 @@
+substitutions:
+  name: kickstart-esp8266
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-esp8266.yaml@master
+
+packages:
+  base: !include kickstart-base-esp.yaml
+
+esp8266:
+  board: nodemcuv2
+
+select:
+  - platform: template
+    id: !extend pin
+    options:
+      - Select PIN
+      - GPIO0
+      - GPIO1
+      - GPIO2
+      - GPIO3
+      - GPIO7
+      - GPIO8
+      - GPIO9
+      - GPIO10
+      - GPIO11
+      - GPIO12
+      - GPIO13
+      - GPIO14
+      - GPIO15
