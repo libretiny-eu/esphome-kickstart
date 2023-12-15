@@ -52,38 +52,38 @@ static const int PIN_MAP[] = {
 };
 #elif defined(USE_ESP8266)
 static const int PIN_MAP[] = {
-    D0, // GPIO16
-    D1, // GPIO5 / SCL
-    D2, // GPIO4
-    D3, // GPIO0
-    D4, // GPIO2 / SDA
-    D5, // GPIO14 / SCK
-    D6, // GPIO12 / MISO
-    D7, // GPIO13 / MOSI
-    D8, // GPIO15 / SS
-    D9, // GPIO3
-    D10, // GPIO1
+    16,   // GPIO16
+    5,    // GPIO5 / SCL
+    4,    // GPIO4
+    0,    // GPIO0
+    2,    // GPIO2 / SDA
+    14,   // GPIO14 / SCK
+    12,   // GPIO12 / MISO
+    13,   // GPIO13 / MOSI
+    15,   // GPIO15 / SS
+    3,    // GPIO3
+    1,    // GPIO1
 };
 #elif defined(USE_ESP32)
 static const int PIN_MAP[] = {
-    T1,     // GPIO0
-    T2,     // GPIO2
-    T0,     // GPIO4
-    SS,     // GPIO5
-    A15,    // GPIO12
-    A14,    // GPIO13
-    A16,    // GPIO14
-    A13,    // GPIO15
-    SCK,    // GPIO18
-    MISO,   // GPIO19
-    SDA,    // GPIO21
-    SCL,    // GPIO22
-    MOSI,   // GPIO23
-    DAC1,   // GPIO25
-    DAC2,   // GPIO26
-    T7,     // GPIO27
-    T9,     // GPIO32
-    T8,     // GPIO33
+    0,     // GPIO0
+    2,     // GPIO2
+    4,     // GPIO4
+    5,     // GPIO5
+    12,    // GPIO12
+    14,    // GPIO13
+    14,    // GPIO14
+    15,    // GPIO15
+    18,    // GPIO18
+    19,    // GPIO19 / MISO
+    21,    // GPIO21 / SDA
+    22,    // GPIO22 / SCL
+    23,    // GPIO23 / MOSI
+    25,    // GPIO25 / DAC1
+    26,    // GPIO26 / DAC2
+    27,    // GPIO27
+    32,    // GPIO32
+    33,    // GPIO33
 };
 #else
 #error "Unsupported chip type"
