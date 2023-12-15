@@ -1,0 +1,26 @@
+substitutions:
+  name: kickstart-esp8266
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-esp8266.yaml@master
+
+packages:
+  base: !include kickstart-base-esp.yaml
+
+esp8266:
+  board: esp01_1m
+
+select:
+  - platform: template
+    id: !extend pin
+    options:
+      - Select PIN     
+      - GPIO0
+      - GPIO1
+      - GPIO2 / SDA
+      - GPIO3
+      - GPIO4
+      - GPIO5 / SCL
+      - GPIO12 / MISO
+      - GPIO13 / MOSI
+      - GPIO14 / SCK
+      - GPIO15 / SS
+      - GPIO16

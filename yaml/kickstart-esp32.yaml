@@ -1,0 +1,41 @@
+substitutions:
+  name: kickstart-esp32
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-esp32.yaml@master
+
+packages:
+  base: !include kickstart-base-esp.yaml
+
+esp32:
+  board: esp32dev
+
+select:
+  - platform: template
+    id: !extend pin
+    options:
+      - Select PIN
+      - GPIO0
+      - GPIO1
+      - GPIO2
+      - GPIO3
+      - GPIO4
+      - GPIO5 / SS
+      - GPIO12
+      - GPIO13
+      - GPIO14
+      - GPIO15
+      - GPIO16
+      - GPIO17
+      - GPIO18 / SCK
+      - GPIO19 / MISO
+      - GPIO21 / SDA
+      - GPIO22 / SCL
+      - GPIO23 / MOSI
+      - GPIO25 / DAC1
+      - GPIO26 / DAC2
+      - GPIO27
+      - GPIO32
+      - GPIO33
+      - GPIO34
+      - GPIO35
+      - GPIO36
+      - GPIO39

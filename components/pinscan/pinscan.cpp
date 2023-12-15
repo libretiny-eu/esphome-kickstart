@@ -50,6 +50,49 @@ static const int PIN_MAP[] = {
     PIN_PA30,  // PA30 / UART2_TX / I2C0_SDA / PWM4
 
 };
+#elif defined(USE_ESP8266)
+static const int PIN_MAP[] = {
+    0,    // GPIO0
+    1,    // GPIO1
+    2,    // GPIO2 / SDA
+    3,    // GPIO3
+    4,    // GPIO4
+    5,    // GPIO5 / SCL
+    12,   // GPIO12 / MISO
+    13,   // GPIO13 / MOSI
+    14,   // GPIO14 / SCK
+    15,   // GPIO15 / SS
+    16,   // GPIO16
+};
+#elif defined(USE_ESP32)
+static const int PIN_MAP[] = {
+    0,     // GPIO0
+    1,     // GPIO1
+    2,     // GPIO2
+    3,     // GPIO3
+    4,     // GPIO4
+    5,     // GPIO5
+    12,    // GPIO12
+    13,    // GPIO13
+    14,    // GPIO14
+    15,    // GPIO15
+    16,    // GPIO16
+    17,    // GPIO17
+    18,    // GPIO18
+    19,    // GPIO19 / MISO
+    21,    // GPIO21 / SDA
+    22,    // GPIO22 / SCL
+    23,    // GPIO23 / MOSI
+    25,    // GPIO25 / DAC1
+    26,    // GPIO26 / DAC2
+    27,    // GPIO27
+    32,    // GPIO32
+    33,    // GPIO33
+    34,    // GPIO34
+    35,    // GPIO35
+    36,    // GPIO36
+    39,    // GPIO39
+};
 #else
 #error "Unsupported chip type"
 #endif
