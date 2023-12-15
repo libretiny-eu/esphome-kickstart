@@ -6,7 +6,7 @@ packages:
   base: !include kickstart-base-esp.yaml
 
 esp32:
-  board: nodemcu-32s
+  board: esp32dev
 
 select:
   - platform: template

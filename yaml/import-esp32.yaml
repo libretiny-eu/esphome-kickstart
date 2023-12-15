@@ -2,7 +2,7 @@ esphome:
   name: kickstart-esp32
 
 esp32:
-  board: nodemcu-32s
+  board: esp32dev
 
 logger:
 web_server:

@@ -6,7 +6,7 @@ packages:
   base: !include kickstart-base-esp.yaml
 
 esp8266:
-  board: nodemcuv2
+  board: esp01_1m
 
 select:
   - platform: template
