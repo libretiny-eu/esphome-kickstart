@@ -12,15 +12,15 @@ select:
   - platform: template
     id: !extend pin
     options:
-      - Select PIN
-      - GPIO16
-      - GPIO5 / SCL
-      - GPIO4
+      - Select PIN     
       - GPIO0
+      - GPIO1
       - GPIO2 / SDA
-      - GPIO14 / SCK
+      - GPIO3
+      - GPIO4
+      - GPIO5 / SCL
       - GPIO12 / MISO
       - GPIO13 / MOSI
+      - GPIO14 / SCK
       - GPIO15 / SS
-      - GPIO3
-      - GPIO1
+      - GPIO16
