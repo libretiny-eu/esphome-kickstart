@@ -1,0 +1,17 @@
+esphome:
+  name: kickstart-ln882hki
+
+rtl87xx:
+  board: generic-ln882hki
+
+logger:
+web_server:
+captive_portal:
+mdns:
+api:
+ota:
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  ap:
