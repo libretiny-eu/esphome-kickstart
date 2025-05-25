@@ -30,7 +30,6 @@ ota:
   - platform: esphome
 
 wifi:
-  power_save_mode: light
   ap:
     ssid: $name
 

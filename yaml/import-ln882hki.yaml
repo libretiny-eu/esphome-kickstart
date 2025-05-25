@@ -1,7 +1,7 @@
 esphome:
   name: kickstart-ln882hki
 
-rtl87xx:
+ln882x:
   board: generic-ln882hki
 
 logger:
