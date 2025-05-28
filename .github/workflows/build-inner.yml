@@ -77,6 +77,10 @@ jobs:
             cp ${outdir}/firmware.bin ../build/kickstart-${config}-${date}.bin
           fi
 
+          if [ -f ${outdir}/firmware.factory.bin ]; then
+            cp ${outdir}/firmware.factory.bin ../build/kickstart-${config}-${date}.factory.bin
+          fi
+
           if [ $config = 'bk7231t' ]; then
             cp ${outdir}/*.ota.rbl ${outdir}/*.ota.ug.bin ../build/
             cp ${outdir}/*.ota.rbl ../build/OpenBK7231T_OTA_upgrade_to_esphome_${date}.rbl
