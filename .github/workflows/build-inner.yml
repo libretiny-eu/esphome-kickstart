@@ -58,18 +58,27 @@ jobs:
 
       - name: Copy firmware binaries
         run: |
-          config=${{ inputs.config }}
-          date=${{ steps.date.outputs.date }}
           cd yaml/
 
-          # each of these will only succeed for the relevant configs
-          cp .esphome/build/kickstart-${config}/.pioenvs/kickstart-${config}/firmware.bin ../build/kickstart-${config}-${date}.bin || true
-          cp .esphome/build/kickstart-${config}/.pioenvs/kickstart-${config}/firmware.uf2 ../build/kickstart-${config}-${date}.uf2 || true
-          cp .esphome/build/kickstart-${config}/.pioenvs/kickstart-${config}/*.ota.rbl ../build/ || true
-          cp .esphome/build/kickstart-${config}/.pioenvs/kickstart-${config}/*.ota.ug.bin ../build/ || true
+          config=${{ inputs.config }}
+          date=${{ steps.date.outputs.date }}
+          outdir=.esphome/build/kickstart-${config}/.pioenvs/kickstart-${config}
 
-          cp .esphome/build/kickstart-bk7231t/.pioenvs/kickstart-bk7231t/*.ota.rbl ../build/OpenBK7231T_OTA_upgrade_to_esphome_${date}.rbl || true
-          cp .esphome/build/kickstart-bk7231n/.pioenvs/kickstart-bk7231n/*.ota.rbl ../build/OpenBK7231N_OTA_upgrade_to_esphome_${date}.rbl || true
+          # copy UF2 if available, otherwise BIN
+          if [ -f ${outdir}/firmware.uf2 ]; then
+            cp ${outdir}/firmware.uf2 ../build/kickstart-${config}-${date}.uf2
+          else
+            cp ${outdir}/firmware.bin ../build/kickstart-${config}-${date}.bin
+          fi
+
+          if [ $config = 'bk7231t' ]; then
+            cp ${outdir}/*.ota.rbl ${outdir}/*.ota.ug.bin ../build/
+            cp ${outdir}/*.ota.rbl ../build/OpenBK7231T_OTA_upgrade_to_esphome_${date}.rbl
+          fi
+          if [ $config = 'bk7231n' ]; then
+            cp ${outdir}/*.ota.rbl ${outdir}/*.ota.ug.bin ../build/
+            cp ${outdir}/*.ota.rbl ../build/OpenBK7231N_OTA_upgrade_to_esphome_${date}.rbl
+          fi
 
       - name: Add GitHub release assets
         uses: softprops/action-gh-release@v1
