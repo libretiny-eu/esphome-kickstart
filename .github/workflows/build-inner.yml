@@ -40,7 +40,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.platformio
-          key: ${{ runner.os }}-${{ inputs.esphome-repo }}
+          key: ${{ runner.os }}-${{ inputs.esphome-repo || 'esphome/esphome' }}
 
       - name: Install PlatformIO Core
         run: |
