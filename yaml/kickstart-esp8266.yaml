@@ -3,7 +3,7 @@ substitutions:
   import_url: github://libretiny-eu/esphome-kickstart/yaml/import-esp8266.yaml@master
 
 packages:
-  base: !include kickstart-base-esp.yaml
+  base: !include kickstart-base.yaml
 
 esp8266:
   board: esp01_1m

@@ -48,8 +48,6 @@ pinscan:
   pin_state_sensor:
     name: -> Pin State
 
-hub_api:
-
 select:
   - platform: template
     id: mode
@@ -78,9 +76,6 @@ select:
           mode: !lambda "return id(mode).active_index().value();"
 
 text_sensor:
-  - platform: libretiny
-    version:
-      name: LibreTiny Version
   - platform: wifi_info
     ip_address:
       id: ip_address

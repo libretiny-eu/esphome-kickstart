@@ -4,6 +4,7 @@ substitutions:
 
 packages:
   base: !include kickstart-base.yaml
+  libretiny: !include kickstart-base-libretiny.yaml
 
 bk72xx:
   board: generic-bk7231n-qfn32-tuya
