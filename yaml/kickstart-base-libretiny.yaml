@@ -1,0 +1,6 @@
+hub_api:
+
+text_sensor:
+  - platform: libretiny
+    version:
+      name: LibreTiny Version

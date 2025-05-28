@@ -4,6 +4,7 @@ substitutions:
 
 packages:
   base: !include kickstart-base.yaml
+  libretiny: !include kickstart-base-libretiny.yaml
 
 rtl87xx:
   board: generic-rtl8710bn-2mb-788k
