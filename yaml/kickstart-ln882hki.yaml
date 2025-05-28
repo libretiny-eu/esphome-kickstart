@@ -1,6 +1,6 @@
 substitutions:
   name: kickstart-ln882hki
-  import_url: github://lamauny/esphome-kickstart/tree/feature/ln882h/yaml/import-ln882hki.yaml@master
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-ln882hki.yaml@master
 
 packages:
   base: !include kickstart-base.yaml
