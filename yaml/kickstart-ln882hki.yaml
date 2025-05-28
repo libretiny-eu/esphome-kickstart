@@ -4,6 +4,7 @@ substitutions:
 
 packages:
   base: !include kickstart-base.yaml
+  libretiny: !include kickstart-base-libretiny.yaml
 
 ln882x:
   board: generic-ln882hki

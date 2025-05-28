@@ -9,6 +9,9 @@ on:
       bk7231n:
         type: boolean
         description: BK7231N
+      ln882hki:
+        type: boolean
+        description: LN882HKI
       rtl8710bn:
         type: boolean
         description: RTL8710BN
@@ -34,6 +37,8 @@ jobs:
             config: bk7231n
           - enabled: ${{ inputs.rtl8710bn }}
             config: rtl8710bn
+          - enabled: ${{ inputs.ln882hki }}
+            config: ln882hki
           - enabled: ${{ inputs.esp8266 }}
             config: esp8266
           - enabled: ${{ inputs.esp32 }}
