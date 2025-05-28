@@ -14,7 +14,7 @@ esp32:
     # version spec required with custom source
     version: 3.2.0
     # switch to pioarduino - IDF v5.4/arduino v3.2.0
-    platform_version: 54.03.20
+    platform_version: https://github.com/pioarduino/platform-espressif32.git#f0bb1b844ed63e525c9a54750427b7b5ac92dccf
 
 esphome:
   platformio_options:
