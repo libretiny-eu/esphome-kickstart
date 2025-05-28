@@ -27,6 +27,7 @@ logger:
     text_sensor: ERROR
 
 ota:
+  - platform: esphome
 
 wifi:
   ap:
