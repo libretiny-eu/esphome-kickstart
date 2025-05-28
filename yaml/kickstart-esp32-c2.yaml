@@ -1,0 +1,67 @@
+substitutions:
+  name: kickstart-esp32-c2
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-esp32-c2.yaml@master
+
+packages:
+  base: !include kickstart-base.yaml
+
+esp32:
+  board: esp32-c2-devkitm-1
+  framework:
+    type: arduino
+    # force arduino-esp32 v3.2.0, otherwise ESPHome will use PIO registry v2.0.5
+    source: https://github.com/espressif/arduino-esp32/releases/download/3.2.0/esp32-3.2.0.zip
+    # version spec required with custom source
+    version: 3.2.0
+    # switch to pioarduino - IDF v5.4/arduino v3.2.0
+    platform_version: 54.03.20
+
+esphome:
+  platformio_options:
+    platform_packages:
+      # use C2 skeleton with lwIP v2.2.0
+      - framework-arduino-c2-skeleton-lib @ https://github.com/pioarduino/platform-espressif32/releases/download/54.03.20/c2_arduino_compile_skeleton.zip
+      # use IDF compatible with this skeleton (libnet80211.a and other closed blobs)
+      - framework-espidf @ https://github.com/pioarduino/esp-idf/releases/download/v5.4.1.250411/esp-idf-v5.4.1.zip
+    custom_component_remove:
+      # remove network_provisioning and other features unsupported on ESP32-C2
+      - espressif/esp-dsp
+      - espressif/network_provisioning
+      - espressif/esp-zboss-lib
+      - espressif/esp-zigbee-lib
+      - espressif/esp_rainmaker
+      - espressif/esp-sr
+      - espressif/esp-modbus
+      - espressif/esp32-camera
+
+select:
+  - platform: template
+    id: !extend pin
+    options:
+      - Select PIN
+      - GPIO0
+      - GPIO1
+      - GPIO2
+      - GPIO3
+      - GPIO4
+      - GPIO5 / SS
+      - GPIO12
+      - GPIO13
+      - GPIO14
+      - GPIO15
+      - GPIO16
+      - GPIO17
+      - GPIO18 / SCK
+      - GPIO19 / MISO
+      - GPIO21 / SDA
+      - GPIO22 / SCL
+      - GPIO23 / MOSI
+      - GPIO25 / DAC1
+      - GPIO26 / DAC2
+      - GPIO27
+      - GPIO32
+      - GPIO33
+      - GPIO34
+      - GPIO35
+      - GPIO36
+      - GPIO39

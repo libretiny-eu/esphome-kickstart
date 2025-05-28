@@ -21,6 +21,9 @@ on:
       esp32:
         type: boolean
         description: ESP32
+      esp32-c2:
+        type: boolean
+        description: ESP32-C2
 
 permissions:
   contents: write
@@ -43,6 +46,10 @@ jobs:
             config: esp8266
           - enabled: ${{ inputs.esp32 }}
             config: esp32
+          - enabled: ${{ inputs.esp32-c2 }}
+            config: esp32-c2
+            esphome-repo: libretiny-eu/libretiny-esphome
+            esphome-ref: feature/esp32-c2
     uses: libretiny-eu/esphome-kickstart/.github/workflows/build-inner.yml@master
     with:
       enabled: ${{ fromJSON(matrix.enabled) }}
