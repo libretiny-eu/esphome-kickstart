@@ -42,8 +42,6 @@ jobs:
             config: rtl8710bn
           - enabled: ${{ inputs.ln882hki }}
             config: ln882hki
-            esphome-repo: lamauny/esphome
-            esphome-ref: dev-ln882x
           - enabled: ${{ inputs.esp8266 }}
             config: esp8266
           - enabled: ${{ inputs.esp32 }}
