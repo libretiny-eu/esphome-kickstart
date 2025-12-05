@@ -16,7 +16,7 @@ class HubAPI : public AsyncWebHandler, public Component {
  public:
   HubAPI(web_server_base::WebServerBase *base) : base_(base) {}
 
-  bool canHandle(AsyncWebServerRequest *request) override {
+  bool canHandle(AsyncWebServerRequest *request) const override {
     if (request->method() == HTTP_GET) {
       if (request->url().startsWith("/hub"))
         return true;
