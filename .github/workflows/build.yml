@@ -32,6 +32,7 @@ jobs:
   build:
     name: Build ESPHome
     strategy:
+      fail-fast: false
       matrix:
         include:
           - enabled: ${{ inputs.bk7231t }}
