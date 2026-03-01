@@ -9,7 +9,7 @@ packages:
 rtl87xx:
   board: generic-rtl8720cf-2mb-992k
   framework:
-#    version: latest # linker errors when using latest version
+    version: latest
     loglevel: debug
 
 select:
