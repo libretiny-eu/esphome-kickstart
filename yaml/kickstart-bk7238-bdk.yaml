@@ -1,0 +1,38 @@
+substitutions:
+  name: kickstart-bk7238-bdk
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-bk7238-bdk.yaml@master
+
+packages:
+  base: !include kickstart-base.yaml
+  libretiny: !include kickstart-base-libretiny.yaml
+
+bk72xx:
+  board: generic-bk7238
+  framework:
+    version: latest
+    loglevel: debug
+
+select:
+  - platform: template
+    id: !extend pin
+    options:
+      - Select PIN
+      - P0 / UART2_TX / I2C2_SCL
+      - P1 / UART2_RX / I2C2_SDA
+      - P6 / PWM0
+      - P7 / PWM1
+      - P8 / PWM2
+      - P9 / PWM3
+      - P10 / UART1_RX / ADC6
+      - P11 / UART1_TX
+      - P14 / SCK
+      - P15 / CS
+      - P16 / MOSI
+      - P17 / MISO
+      - P20 / ADC3
+      - P21
+      - P22
+      - P23
+      - P24 / PWM4 / ADC2
+      - P26 / PWM5 / ADC1
+      - P28 / ADC4
