@@ -1,5 +1,5 @@
 esphome:
-  name: kickstart-bk7238-bdk
+  name: kickstart-bk7238
 
 bk72xx:
   board: generic-bk7238

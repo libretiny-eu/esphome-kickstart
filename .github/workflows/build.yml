@@ -9,12 +9,12 @@ on:
       bk7231n:
         type: boolean
         description: BK7231N
+      bk7238:
+        type: boolean
+        description: BK7238
       bk7238-tuya:
         type: boolean
         description: BK7238 (Tuya)
-      bk7238-bdk:
-        type: boolean
-        description: BK7238 (BDK)
       ln882hki:
         type: boolean
         description: LN882HKI
@@ -45,10 +45,10 @@ jobs:
             config: bk7231t
           - enabled: ${{ inputs.bk7231n }}
             config: bk7231n
+          - enabled: ${{ inputs.bk7238 }}
+            config: bk7238
           - enabled: ${{ inputs.bk7238-tuya }}
             config: bk7238-tuya
-          - enabled: ${{ inputs.bk7238-bdk }}
-            config: bk7238-bdk
           - enabled: ${{ inputs.rtl8710bn }}
             config: rtl8710bn
           - enabled: ${{ inputs.ln882hki }}

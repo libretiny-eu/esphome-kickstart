@@ -1,6 +1,6 @@
 substitutions:
-  name: kickstart-bk7238-bdk
-  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-bk7238-bdk.yaml@master
+  name: kickstart-bk7238
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-bk7238.yaml@master
 
 packages:
   base: !include kickstart-base.yaml
