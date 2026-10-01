@@ -1,6 +1,6 @@
 substitutions:
-  name: kickstart-bk7231n
-  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-bk7231n.yaml@master
+  name: kickstart-bk7231n-tuya
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-bk7231n-tuya.yaml@master
 
 packages:
   base: !include kickstart-base.yaml

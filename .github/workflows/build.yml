@@ -3,12 +3,12 @@ name: "Build ESPHome"
 on:
   workflow_dispatch:
     inputs:
-      bk7231t:
+      bk7231t-tuya:
         type: boolean
-        description: BK7231T
-      bk7231n:
+        description: BK7231T (Tuya)
+      bk7231n-tuya:
         type: boolean
-        description: BK7231N
+        description: BK7231N (Tuya)
       bk7238:
         type: boolean
         description: BK7238
@@ -18,9 +18,9 @@ on:
       ln882hki:
         type: boolean
         description: LN882HKI
-      rtl8710bn:
+      rtl8710bn-tuya:
         type: boolean
-        description: RTL8710BN
+        description: RTL8710BN (Tuya)
       rtl8720cf-tuya:
         type: boolean
         description: RTL8720CF (Tuya)
@@ -44,16 +44,16 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - enabled: ${{ inputs.bk7231t }}
-            config: bk7231t
-          - enabled: ${{ inputs.bk7231n }}
-            config: bk7231n
+          - enabled: ${{ inputs.bk7231t-tuya }}
+            config: bk7231t-tuya
+          - enabled: ${{ inputs.bk7231n-tuya }}
+            config: bk7231n-tuya
           - enabled: ${{ inputs.bk7238 }}
             config: bk7238
           - enabled: ${{ inputs.bk7238-tuya }}
             config: bk7238-tuya
-          - enabled: ${{ inputs.rtl8710bn }}
-            config: rtl8710bn
+          - enabled: ${{ inputs.rtl8710bn-tuya }}
+            config: rtl8710bn-tuya
           - enabled: ${{ inputs.rtl8720cf-tuya }}
             config: rtl8720cf-tuya
           - enabled: ${{ inputs.ln882hki }}
