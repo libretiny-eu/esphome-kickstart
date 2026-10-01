@@ -7,6 +7,8 @@ packages:
 
 esp32:
   board: esp32dev
+  framework:
+    type: arduino
 
 select:
   - platform: template
