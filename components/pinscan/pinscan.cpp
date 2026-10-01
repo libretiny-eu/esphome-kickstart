@@ -29,6 +29,28 @@ static const int PIN_MAP[] = {
     PIN_P26,  // P26 / PWM5
     PIN_P28,  // P28
 };
+#elif defined(LT_BK7238)
+static const int PIN_MAP[] = {
+    PIN_P0,   // P0 / UART2_TX / I2C2_SCL
+    PIN_P1,   // P1 / UART2_RX / I2C2_SDA
+    PIN_P6,   // P6 / PWM0
+    PIN_P7,   // P7 / PWM1
+    PIN_P8,   // P8 / PWM2
+    PIN_P9,   // P9 / PWM3
+    PIN_P10,  // P10 / UART1_RX / ADC6
+    PIN_P11,  // P11 / UART1_TX
+    PIN_P14,  // P14 / SCK
+    PIN_P15,  // P15 / CS
+    PIN_P16,  // P16 / MOSI
+    PIN_P17,  // P17 / MISO
+    PIN_P20,  // P20 / ADC3
+    PIN_P21,  // P21
+    PIN_P22,  // P22
+    PIN_P23,  // P23
+    PIN_P24,  // P24 / PWM4 / ADC2
+    PIN_P26,  // P26 / PWM5 / ADC1
+    PIN_P28,  // P28 / ADC4
+};
 #elif defined(LT_RTL8710B)
 static const int PIN_MAP[] = {
     PIN_PA00,  // PA00 / PWM2
