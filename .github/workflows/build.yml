@@ -15,9 +15,9 @@ on:
       rtl8710bn:
         type: boolean
         description: RTL8710BN
-      rtl8720cf:
+      rtl8720cf-tuya:
         type: boolean
-        description: RTL8720CF
+        description: RTL8720CF (Tuya)
       esp8266:
         type: boolean
         description: ESP8266
@@ -44,8 +44,8 @@ jobs:
             config: bk7231n
           - enabled: ${{ inputs.rtl8710bn }}
             config: rtl8710bn
-          - enabled: ${{ inputs.rtl8720cf }}
-            config: rtl8720cf
+          - enabled: ${{ inputs.rtl8720cf-tuya }}
+            config: rtl8720cf-tuya
           - enabled: ${{ inputs.ln882hki }}
             config: ln882hki
           - enabled: ${{ inputs.esp8266 }}

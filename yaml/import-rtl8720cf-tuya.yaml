@@ -1,8 +1,8 @@
 esphome:
-  name: kickstart-rtl8720cf-2mb-992k
+  name: kickstart-rtl8720cf-tuya
 
 rtl87xx:
-  board: generic-rtl8720cf-2mb-992k
+  board: generic-rtl8720cf-2mb-896k
 
 logger:
 web_server:

@@ -1,0 +1,39 @@
+substitutions:
+  name: kickstart-rtl8720cf-tuya
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-rtl8720cf-tuya.yaml@master
+
+packages:
+  base: !include kickstart-base.yaml
+  libretiny: !include kickstart-base-libretiny.yaml
+
+rtl87xx:
+  board: generic-rtl8720cf-2mb-896k
+  framework:
+    version: latest
+    loglevel: debug
+
+select:
+  - platform: template
+    id: !extend pin
+    options:
+      - Select PIN
+      - PA00 / UART1_RX / PWM0 / SWCLK
+      - PA01 / UART1_TX / PWM1 / SWDIO
+      - PA02 / UART1_RX / SPI0_CS / I2C0_SCL / PWM2
+      - PA03 / UART1_TX / SPI0_SCK / I2C0_SDA / PWM3
+      - PA04 / UART1_CTS / SPI0_MOSI / PWM4
+      - PA07 / FCS / SPI0_CS
+      - PA08 / FSCK / SPI0_SCK
+      - PA09 / FD2 / SPI0_MOSI / UART0_RTS
+      - PA10 / FD1 / SPI0_MISO / UART0_CTS
+      - PA11 / FD0 / UART0_TX / I2C0_SCL / PWM0
+      - PA12 / FD3 / UART0_RX / I2C0_SDA / PWM1
+      - PA13 / UART0_RX / PWM7
+      - PA14 / UART0_TX / PWM2
+      - PA15 / SPI0_CS / UART2_RX / I2C0_SCL / PWM3
+      - PA16 / SPI0_SCK / UART2_TX / I2C0_SDA / PWM4
+      - PA17 / PWM5
+      - PA18 / PWM6
+      - PA19 / SPI0_MOSI / UART2_CTS / I2C0_SCL / PWM7
+      - PA20 / SPI0_MISO / UART2_RTS / I2C0_SDA / PWM0
+      - PA23 / PWM7
