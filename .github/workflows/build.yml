@@ -18,9 +18,12 @@ on:
       bk7238-tuya:
         type: boolean
         description: BK7238 (Tuya)
-      ln882hki:
+      ln882h:
         type: boolean
-        description: LN882HKI
+        description: LN882H
+      ln882h-tuya:
+        type: boolean
+        description: LN882H (Tuya)
       rtl8710bn-tuya:
         type: boolean
         description: RTL8710BN (Tuya)
@@ -61,8 +64,10 @@ jobs:
             config: rtl8710bn-tuya
           - enabled: ${{ inputs.rtl8720cf-tuya }}
             config: rtl8720cf-tuya
-          - enabled: ${{ inputs.ln882hki }}
-            config: ln882hki
+          - enabled: ${{ inputs.ln882h }}
+            config: ln882h
+          - enabled: ${{ inputs.ln882h-tuya }}
+            config: ln882h-tuya
           - enabled: ${{ inputs.esp8266 }}
             config: esp8266
           - enabled: ${{ inputs.esp32 }}

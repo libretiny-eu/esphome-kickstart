@@ -1,13 +1,13 @@
 substitutions:
-  name: kickstart-ln882hki
-  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-ln882hki.yaml@master
+  name: kickstart-ln882h-tuya
+  import_url: github://libretiny-eu/esphome-kickstart/yaml/import-ln882h-tuya.yaml@master
 
 packages:
   base: !include kickstart-base.yaml
   libretiny: !include kickstart-base-libretiny.yaml
 
 ln882x:
-  board: generic-ln882hki
+  board: generic-ln882h-tuya
   framework:
     version: dev
     loglevel: debug

@@ -1,8 +1,8 @@
 esphome:
-  name: kickstart-ln882hki
+  name: kickstart-ln882h-tuya
 
 ln882x:
-  board: generic-ln882hki
+  board: generic-ln882h-tuya
 
 logger:
 web_server:
