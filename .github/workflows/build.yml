@@ -3,21 +3,30 @@ name: "Build ESPHome"
 on:
   workflow_dispatch:
     inputs:
-      bk7231t-tuya:
-        type: boolean
-        description: BK7231T (Tuya)
       bk7231n:
         type: boolean
         description: BK7231N
       bk7231n-tuya:
         type: boolean
         description: BK7231N (Tuya)
+      bk7231t-tuya:
+        type: boolean
+        description: BK7231T (Tuya)
       bk7238:
         type: boolean
         description: BK7238
       bk7238-tuya:
         type: boolean
         description: BK7238 (Tuya)
+      esp32:
+        type: boolean
+        description: ESP32
+      esp32-c2:
+        type: boolean
+        description: ESP32-C2
+      esp8266:
+        type: boolean
+        description: ESP8266
       ln882h:
         type: boolean
         description: LN882H
@@ -30,15 +39,6 @@ on:
       rtl8720cf-tuya:
         type: boolean
         description: RTL8720CF (Tuya)
-      esp8266:
-        type: boolean
-        description: ESP8266
-      esp32:
-        type: boolean
-        description: ESP32
-      esp32-c2:
-        type: boolean
-        description: ESP32-C2
 
 permissions:
   contents: write
@@ -50,32 +50,33 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - enabled: ${{ inputs.bk7231t-tuya }}
-            config: bk7231t-tuya
-          - enabled: ${{ inputs.bk7231n }}
-            config: bk7231n
-          - enabled: ${{ inputs.bk7231n-tuya }}
-            config: bk7231n-tuya
-          - enabled: ${{ inputs.bk7238 }}
-            config: bk7238
-          - enabled: ${{ inputs.bk7238-tuya }}
-            config: bk7238-tuya
-          - enabled: ${{ inputs.rtl8710bn-tuya }}
-            config: rtl8710bn-tuya
-          - enabled: ${{ inputs.rtl8720cf-tuya }}
-            config: rtl8720cf-tuya
-          - enabled: ${{ inputs.ln882h }}
-            config: ln882h
-          - enabled: ${{ inputs.ln882h-tuya }}
-            config: ln882h-tuya
-          - enabled: ${{ inputs.esp8266 }}
-            config: esp8266
-          - enabled: ${{ inputs.esp32 }}
-            config: esp32
-          - enabled: ${{ inputs.esp32-c2 }}
-            config: esp32-c2
+          - config: bk7231n
+            enabled: ${{ inputs.bk7231n }}
+          - config: bk7231n-tuya
+            enabled: ${{ inputs.bk7231n-tuya }}
+          - config: bk7231t-tuya
+            enabled: ${{ inputs.bk7231t-tuya }}
+          - config: bk7238
+            enabled: ${{ inputs.bk7238 }}
+          - config: bk7238-tuya
+            enabled: ${{ inputs.bk7238-tuya }}
+          - config: esp32
+            enabled: ${{ inputs.esp32 }}
+          - config: esp32-c2
+            enabled: ${{ inputs.esp32-c2 }}
             esphome-repo: libretiny-eu/libretiny-esphome
             esphome-ref: feature/esp32-c2
+          - config: esp8266
+            enabled: ${{ inputs.esp8266 }}
+          - config: ln882h
+            enabled: ${{ inputs.ln882h }}
+          - config: ln882h-tuya
+            enabled: ${{ inputs.ln882h-tuya }}
+          - config: rtl8710bn-tuya
+            enabled: ${{ inputs.rtl8710bn-tuya }}
+          - config: rtl8720cf-tuya
+            enabled: ${{ inputs.rtl8720cf-tuya }}
+
     uses: libretiny-eu/esphome-kickstart/.github/workflows/build-inner.yml@master
     with:
       enabled: ${{ fromJSON(matrix.enabled) }}
