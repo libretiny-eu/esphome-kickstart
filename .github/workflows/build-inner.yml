@@ -70,25 +70,45 @@ jobs:
           date=${{ steps.date.outputs.date }}
           outdir=.esphome/build/kickstart-${config}/.pioenvs/kickstart-${config}
 
-          # copy UF2 if available, otherwise BIN
+          # copy UF2 if available
           if [ -f ${outdir}/firmware.uf2 ]; then
             cp ${outdir}/firmware.uf2 ../build/kickstart-${config}-${date}.uf2
-          else
-            cp ${outdir}/firmware.bin ../build/kickstart-${config}-${date}.bin
           fi
 
-          if [ -f ${outdir}/firmware.factory.bin ]; then
-            cp ${outdir}/firmware.factory.bin ../build/kickstart-${config}-${date}.factory.bin
-          fi
+          # copy family-specific outputs
+          # ;;& goes through all matching branches, not just the first one
+          case $config in
+            bk7231t|bk7231n|bk7238)
+              cp ${outdir}/*.ota.rbl ../build/kickstart-${config}-${date}.ota.rbl
+              ;;&
+            bk7231t-tuya)
+              cp ${outdir}/*.ota.rbl ../build/OpenBK7231T_OTA_upgrade_to_esphome_${date}.rbl
+              ;;&
+            bk7231n-tuya)
+              cp ${outdir}/*.ota.rbl ../build/OpenBK7231N_OTA_upgrade_to_esphome_${date}.rbl
+              ;;&
+            bk*-tuya)
+              cp ${outdir}/*.ota.ug.bin ../build/kickstart-${config}-${date}.ota.ug.bin || true
+              ;;&
 
-          if [ $config = 'bk7231t' ]; then
-            cp ${outdir}/*.ota.rbl ${outdir}/*.ota.ug.bin ../build/
-            cp ${outdir}/*.ota.rbl ../build/OpenBK7231T_OTA_upgrade_to_esphome_${date}.rbl
-          fi
-          if [ $config = 'bk7231n' ]; then
-            cp ${outdir}/*.ota.rbl ${outdir}/*.ota.ug.bin ../build/
-            cp ${outdir}/*.ota.rbl ../build/OpenBK7231N_OTA_upgrade_to_esphome_${date}.rbl
-          fi
+            esp32*)
+              cp ${outdir}/firmware.factory.bin ../build/kickstart-${config}-${date}.factory.bin
+              cp ${outdir}/firmware.ota.bin ../build/kickstart-${config}-${date}.ota.bin
+              ;;&
+            esp8266*)
+              cp ${outdir}/firmware.bin ../build/kickstart-${config}-${date}.firmware.bin
+              ;;&
+
+            ln882h*)
+              cp ${outdir}/image_ota.*.bin ../build/kickstart-${config}-${date}.ota.bin
+              ;;&
+
+            rtl8720cf*)
+              cp ${outdir}/image_firmware_is.*.bin ../build/kickstart-${config}-${date}.app.bin
+              ;;&
+
+            *) ;;
+          esac
 
       - name: Add GitHub release assets
         uses: softprops/action-gh-release@v1
