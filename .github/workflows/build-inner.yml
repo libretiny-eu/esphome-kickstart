@@ -92,6 +92,7 @@ jobs:
               ;;&
 
             esp32*)
+              outdir=.esphome/build/kickstart-${config}/build
               cp -v ${outdir}/firmware.factory.bin ../build/kickstart-${config}-${date}.factory.bin
               cp -v ${outdir}/firmware.ota.bin ../build/kickstart-${config}-${date}.ota.bin
               ;;&
